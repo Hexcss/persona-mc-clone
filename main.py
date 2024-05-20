@@ -1,9 +1,13 @@
-from ursina import Ursina, Entity, EditorCamera, color
+# main.py
+
+from ursina import Ursina, EditorCamera
+from scripts.player import Player
+from scripts.environment import create_environment
 
 app = Ursina()
 
-ground = Entity(model='plane', scale=(128, 1, 128), color=color.green)
-
+player = Player()
+ground = create_environment()
 editor_camera = EditorCamera()
 
 app.run()
